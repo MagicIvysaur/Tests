@@ -1,0 +1,83 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+import random
+
+computer_pick = None
+computer_choice = None
+pwin_switch = False
+cwin_switch = False
+
+player_choice = int(input("Please make a choice with a number:\n0-Rock\n1-Paper\n2-Scissors\n#"))
+
+suits = [rock, paper, scissors]
+
+computer_choice = [random.choice(suits)]
+
+if computer_choice[0] == rock:
+  computer_pick = "rock"
+elif computer_choice[0] == paper:
+  computer_pick = "paper"
+elif computer_choice[0] == scissors:
+  computer_pick = "scissors"
+
+if player_choice == 0:
+  player_choice = rock
+  player_pick = "rock"
+elif player_choice == 1:
+  player_choice = paper
+  player_pick = "paper"
+elif player_choice == 2:
+  player_choice = scissors
+  player_pick = "scissors"
+elif player_choice >= 3 or player_choice < 0:
+  print("\nPlayer chose an invalid number and lost!")
+  player_pick = ""
+  player_pick == player_choice
+
+if player_choice == rock and computer_choice[0] == scissors:
+  pwin_switch = True
+elif player_choice == paper and computer_choice[0] == rock:
+  pwin_switch = True
+elif player_choice == scissors and computer_choice[0] == paper:
+  pwin_switch = True
+
+elif player_choice == computer_choice[0]:
+  print("Draw")
+  
+else:
+  cwin_switch = True
+
+if pwin_switch == True:
+  print("\nPlayer won")
+elif cwin_switch == True:
+  print("\nComputer won")
+  
+print(f"\nComputer chose {computer_pick}{computer_choice[0]} \n\n Player chose {player_pick}{player_choice}")
+
+
+
